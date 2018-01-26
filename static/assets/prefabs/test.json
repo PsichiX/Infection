@@ -1,0 +1,35 @@
+{
+  "name": "test-map",
+  "children": [
+    {
+      "transform": {
+        "position": [0, 0]
+      },
+      "components": {
+        "PrefabInstance": {
+          "asset": "prefabs/building.json"
+        }
+      }
+    },
+    {
+      "transform": {
+        "position": [-1024, 0]
+      },
+      "components": {
+        "PrefabInstance": {
+          "asset": "prefabs/building.json"
+        }
+      }
+    },
+    {
+      "transform": {
+        "position": [1024, 0]
+      },
+      "components": {
+        "PrefabInstance": {
+          "asset": "prefabs/building.json"
+        }
+      }
+    }
+  ]
+}

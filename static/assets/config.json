@@ -1,0 +1,15 @@
+{
+  "assets": [
+    "shader://shaders/sprite-transparent.json",
+    "shader://shaders/fullscreen-tiled.json",
+    "shader://shaders/text-outline-transparent.json",
+    "image://images/building.png",
+    "image://images/sky.png",
+    "image://images/parallax1.png",
+    "image://images/parallax2.png",
+    "font://fonts/verdana.fnt",
+    "scene://prefabs/building.json",
+    "scene://prefabs/test.json",
+    "scene://scenes/game.json"
+  ]
+}

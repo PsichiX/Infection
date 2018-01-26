@@ -1,0 +1,86 @@
+{
+  "name": "root",
+  "children": [
+    {
+      "name": "camera",
+      "transform": {
+        "position": [0, -1500]
+      },
+      "components": {
+        "Camera2D": {
+          "zoomOut": 3000,
+          "zoomMode": "keep-aspect",
+          "captureEntity": "/world"
+        }
+      }
+    },
+    {
+      "name": "world",
+      "children": [
+        {
+          "name": "sky",
+          "components": {
+            "Sprite": {
+              "shader": "shaders/fullscreen-tiled.json",
+              "overrideBaseTexture": "images/sky.png",
+              "width": 2,
+              "height": 2,
+              "xOrigin": 0.5,
+              "yOrigin": 0.5
+            },
+            "SkyController": {
+              "tileWidth": 711
+            }
+          }
+        },
+        {
+          "name": "parallax1",
+          "transform": {
+            "position": [0, -100],
+            "scale": 0.65
+          },
+          "components": {
+            "Sprite": {
+              "shader": "shaders/sprite-transparent.json",
+              "overrideBaseTexture": "images/parallax1.png",
+              "width": -1,
+              "height": -1,
+              "xOrigin": 0.5,
+              "yOrigin": 1
+            },
+            "ParallaxController": {
+              "camera": "/camera"
+            }
+          }
+        },
+        {
+          "name": "parallax2",
+          "transform": {
+            "scale": 0.65
+          },
+          "components": {
+            "Sprite": {
+              "shader": "shaders/sprite-transparent.json",
+              "overrideBaseTexture": "images/parallax2.png",
+              "width": -1,
+              "height": -1,
+              "xOrigin": 0.5,
+              "yOrigin": 1
+            },
+            "ParallaxController": {
+              "camera": "/camera"
+            }
+          }
+        },
+        {
+          "name": "map",
+          "components": {
+            "PrefabInstance": {
+              "asset": "prefabs/test.json"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
