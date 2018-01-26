@@ -19,12 +19,4 @@ EntitySystem.registerComponent('ParallaxController', ParallaxController.factory)
 
 vec4.set(RenderSystem.clearColor, 0, 0, 0, 0);
 
-AssetSystem.load('json://config.json')
-// AssetSystem.load('pack://assets.pack')
-//   .then(packAsset => AssetSystem.fetchEngine = packAsset.makeFetchEngine())
-//   .then(() => AssetSystem.load('json://config.json'))
-  .then(configAsset => AssetSystem.loadAll(configAsset.data.assets))
-  .then(() => System.events.triggerLater(
-    'change-scene',
-    'scene://scenes/game.json'
-  ));
+AssetSystem.load('json://config.json');
