@@ -13,3 +13,7 @@ export function instantiatePrefab(path) {
 
   return EntitySystem.buildEntity(asset.data);
 }
+
+export function clamp(value, from, to) {
+  return Math.max(from, Math.min(to, value))
+}

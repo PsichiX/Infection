@@ -1,0 +1,13 @@
+{
+  "name": "human",
+  "components": {
+    "Sprite": {
+      "shader": "shaders/sprite-transparent.json",
+      "overrideBaseTexture": "images/mockups/mockup-poke.json",
+      "width": -1,
+      "height": -1,
+      "xOrigin": 0.5,
+      "yOrigin": 1
+    }
+  }
+}
