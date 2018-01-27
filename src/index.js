@@ -3,6 +3,7 @@ import SkyController from './SkyController';
 import ParallaxController from './ParallaxController';
 import GameController from './GameController';
 import BuildingController from './BuildingController';
+import HealthController from "./HealthController";
 
 lazyInitialization({
   render: { screen: 'screen-0' },
@@ -20,6 +21,7 @@ EntitySystem.registerComponent('SkyController', SkyController.factory);
 EntitySystem.registerComponent('ParallaxController', ParallaxController.factory);
 EntitySystem.registerComponent('GameController', GameController.factory);
 EntitySystem.registerComponent('BuildingController', BuildingController.factory);
+EntitySystem.registerComponent('HealthController', HealthController.factory);
 
 vec4.set(RenderSystem.clearColor, 0, 0, 0, 0);
 

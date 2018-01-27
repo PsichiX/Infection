@@ -222,6 +222,17 @@
           "name": "actors"
         }
       ]
+    },
+    {
+      "name": "UI",
+      "transform": {
+        "position": [0, 0]
+      },
+      "components": {
+        "HealthController": {
+
+        }
+      }
     }
   ]
 }
