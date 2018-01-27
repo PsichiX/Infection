@@ -4,13 +4,33 @@
     {
       "name": "camera",
       "transform": {
-        "position": [0, -3000]
+        "position": [0, -1800]
       },
       "components": {
         "Camera2D": {
-          "zoomOut": 6000,
+          "zoomOut": 5000,
           "zoomMode": "keep-aspect",
           "captureEntity": "/world"
+        },
+        "GameController": {
+          "buildings": "/world/buildings",
+          "actors": "/world/actors",
+          "buildingsSeparation": 1024,
+          "buildingsCount": 25,
+          "buildingPrefabs": [
+            "scene://prefabs/building-1.json",
+            "scene://prefabs/building-2.json",
+            "scene://prefabs/building-3.json",
+            "scene://prefabs/building-4.json",
+            "scene://prefabs/building-5.json",
+            "scene://prefabs/building-6.json"
+          ],
+          "lampPrefabs": [
+            "scene://prefabs/lamp.json"
+          ],
+          "hydrantPrefabs": [
+            "scene://prefabs/hydrant.json"
+          ]
         }
       }
     },
@@ -29,15 +49,102 @@
               "yOrigin": 0.5
             },
             "SkyController": {
-              "tileWidth": 711
+              "tileWidth": 264
+            }
+          }
+        },
+        {
+          "name": "clouds",
+          "components": {
+            "Sprite": {
+              "shader": "shaders/sprite-tiled-transparent.json",
+              "overrideBaseTexture": "images/clouds.png",
+              "width": -1,
+              "height": -1,
+              "xOrigin": 0.5,
+              "yOrigin": 0,
+              "color": [0.8, 0.8, 0.8, 1]
+            },
+            "ParallaxController": {
+              "camera": "/camera",
+              "tileWidth": 2000,
+              "tileScale": 4,
+              "cameraLock": "top",
+              "cameraLockOffset": 700
+            }
+          }
+        },
+        {
+          "name": "mountains1",
+          "transform": {
+            "position": [0, -200]
+          },
+          "components": {
+            "Sprite": {
+              "shader": "shaders/sprite-tiled-transparent.json",
+              "overrideBaseTexture": "images/mountains.png",
+              "width": -1,
+              "height": -1,
+              "xOrigin": 0.5,
+              "yOrigin": 1
+            },
+            "ParallaxController": {
+              "camera": "/camera",
+              "tileWidth": 2000,
+              "tileScale": 3,
+              "offset": 200
+            }
+          }
+        },
+        {
+          "name": "mountains2",
+          "transform": {
+            "position": [0, 0]
+          },
+          "components": {
+            "Sprite": {
+              "shader": "shaders/sprite-tiled-transparent.json",
+              "overrideBaseTexture": "images/mountains.png",
+              "width": -1,
+              "height": -1,
+              "xOrigin": 0.5,
+              "yOrigin": 1,
+              "color": [0.9, 0.9, 0.9, 1]
+            },
+            "ParallaxController": {
+              "camera": "/camera",
+              "tileWidth": 2000,
+              "tileScale": 3,
+              "offset": 100
+            }
+          }
+        },
+        {
+          "name": "mountains3",
+          "transform": {
+            "position": [0, 200]
+          },
+          "components": {
+            "Sprite": {
+              "shader": "shaders/sprite-tiled-transparent.json",
+              "overrideBaseTexture": "images/mountains.png",
+              "width": -1,
+              "height": -1,
+              "xOrigin": 0.5,
+              "yOrigin": 1,
+              "color": [0.8, 0.8, 0.8, 1]
+            },
+            "ParallaxController": {
+              "camera": "/camera",
+              "tileWidth": 2000,
+              "tileScale": 3
             }
           }
         },
         {
           "name": "parallax1",
           "transform": {
-            "position": [0, -100],
-            "scale": 0.5
+            "position": [0, -100]
           },
           "components": {
             "Sprite": {
@@ -50,15 +157,13 @@
             },
             "ParallaxController": {
               "camera": "/camera",
-              "tileWidth": 7282
+              "tileWidth": 1999,
+              "tileScale": 3
             }
           }
         },
         {
           "name": "parallax2",
-          "transform": {
-            "scale": 0.5
-          },
           "components": {
             "Sprite": {
               "shader": "shaders/sprite-tiled-transparent.json",
@@ -70,17 +175,51 @@
             },
             "ParallaxController": {
               "camera": "/camera",
-              "tileWidth": 7248
+              "tileWidth": 2001,
+              "tileScale": 3
             }
           }
         },
         {
-          "name": "map",
+          "name": "road-walk",
           "components": {
-            "PrefabInstance": {
-              "asset": "prefabs/test.json"
+            "Sprite": {
+              "shader": "shaders/sprite-tiled-transparent.json",
+              "overrideBaseTexture": "images/road-walk.png",
+              "width": -1,
+              "height": -1,
+              "xOrigin": 0.5
+            },
+            "ParallaxController": {
+              "camera": "/camera",
+              "tileWidth": 1025
             }
           }
+        },
+        {
+          "name": "road",
+          "transform": {
+            "position": [0, 342]
+          },
+          "components": {
+            "Sprite": {
+              "shader": "shaders/sprite-tiled-transparent.json",
+              "overrideBaseTexture": "images/road.png",
+              "width": -1,
+              "height": -1,
+              "xOrigin": 0.5
+            },
+            "ParallaxController": {
+              "camera": "/camera",
+              "tileWidth": 1025
+            }
+          }
+        },
+        {
+          "name": "buildings"
+        },
+        {
+          "name": "actors"
         }
       ]
     }

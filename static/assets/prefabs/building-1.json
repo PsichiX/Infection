@@ -1,0 +1,23 @@
+{
+  "name": "building",
+  "components": {
+    "BuildingController": {
+      "condignationHeight": 341,
+      "condignationPrefab": "scene://prefabs/condignation.json",
+      "bottomTextures": [
+        "images/building-bottom-1.png",
+        "images/building-bottom-2.png"
+      ],
+      "middleTextures": [
+        "images/building-middle-1.png"
+      ],
+      "topTextures": [
+        "images/building-top-1.png",
+        "images/building-top-2.png",
+        "images/building-top-3.png",
+        "images/building-top-5.png",
+        "images/building-top-6.png"
+      ]
+    }
+  }
+}

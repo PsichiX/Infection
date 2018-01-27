@@ -1,0 +1,13 @@
+{
+  "name": "building",
+  "components": {
+    "Sprite": {
+      "shader": "shaders/sprite-transparent.json",
+      "overrideBaseTexture": "images/building-complete-2.png",
+      "width": -1,
+      "height": -1,
+      "xOrigin": 0.5,
+      "yOrigin": 1
+    }
+  }
+}

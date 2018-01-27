@@ -6,7 +6,11 @@ export default class ParallaxController extends Script {
     return {
       ...Script.propsTypes,
       camera: 'string',
-      tileWidth: 'number'
+      tileWidth: 'number',
+      tileScale: 'number',
+      offset: 'number',
+      cameraLock: 'string_null',
+      cameraLockOffset: 'number'
     };
   }
 
@@ -19,15 +23,19 @@ export default class ParallaxController extends Script {
 
     this.camera = '.';
     this.tileWidth = 100;
+    this.tileScale = 1;
+    this.offset = 0;
+    this.cameraLock = null;
+    this.cameraLockOffset = 0;
     this._camera = null;
     this._renderer = null;
-    this._offset = 0;
   }
 
   dispose() {
     super.dispose();
 
     this.camera = null;
+    this.cameraLock = null;
     this._camera = null;
     this._renderer = null;
   }
@@ -50,13 +58,24 @@ export default class ParallaxController extends Script {
   }
 
   onUpdate(deltaTime) {
-    const { tileWidth, _camera, _renderer, _offset } = this;
+    const {
+      tileWidth,
+      tileScale,
+      offset,
+      cameraLock,
+      cameraLockOffset,
+      _camera,
+      _renderer
+    } = this;
     if (!!_camera && !!_renderer) {
       const { entity, overrideUniforms } = _renderer;
       const scale = _camera.cachedWorldWidth / tileWidth;
-      entity.setScale(scale, 1);
-      overrideUniforms.uTiles = [scale, 1];
-      overrideUniforms.uOffset = [_offset / scale, 0];
+      entity.setScale(scale, tileScale);
+      if (cameraLock === 'top') {
+        entity.setPosition(0, -_camera.cachedWorldHeight + cameraLockOffset);
+      }
+      overrideUniforms.uTiles = [scale / tileScale, 1];
+      overrideUniforms.uOffset = [offset / scale, 0];
       _renderer.overrideUniforms = overrideUniforms;
     }
   }

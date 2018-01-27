@@ -1,0 +1,13 @@
+{
+  "name": "lamp",
+  "components": {
+    "Sprite": {
+      "shader": "shaders/sprite-transparent.json",
+      "overrideBaseTexture": "images/lamp.png",
+      "width": -1,
+      "height": -1,
+      "xOrigin": 0.5,
+      "yOrigin": 1
+    }
+  }
+}
