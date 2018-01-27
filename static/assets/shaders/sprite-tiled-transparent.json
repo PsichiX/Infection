@@ -1,0 +1,34 @@
+{
+  "vertex": "shaders/sprite-tiled.vert",
+  "fragment": "shaders/sprite-tiled.frag",
+  "layout": {
+    "aPosition": {
+      "size": 2,
+      "stride": 4,
+      "offset": 0
+    },
+    "aTexCoord": {
+      "size": 2,
+      "stride": 4,
+      "offset": 2
+    }
+  },
+  "uniforms": {
+    "uModelView": "model-view-matrix",
+    "uProjection": "projection-matrix",
+    "uColor": [1, 1, 1, 1],
+    "uTiles": [1, 1],
+    "uOffset": [0, 0]
+  },
+  "samplers": {
+    "sBase": {
+      "channel": 0,
+      "texture": "",
+      "filtering": "linear"
+    }
+  },
+  "blending": {
+    "source": "src-alpha",
+    "destination": "one-minus-src-alpha"
+  }
+}

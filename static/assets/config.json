@@ -1,6 +1,7 @@
 {
   "assets": [
     "shader://shaders/sprite-transparent.json",
+    "shader://shaders/sprite-tiled-transparent.json",
     "shader://shaders/fullscreen-tiled.json",
     "shader://shaders/text-outline-transparent.json",
     "image://images/building.png",

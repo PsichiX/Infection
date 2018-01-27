@@ -5,7 +5,8 @@ export default class ParallaxController extends Script {
   static get propsTypes() {
     return {
       ...Script.propsTypes,
-      camera: 'string'
+      camera: 'string',
+      tileWidth: 'number'
     };
   }
 
@@ -17,8 +18,10 @@ export default class ParallaxController extends Script {
     super();
 
     this.camera = '.';
+    this.tileWidth = 100;
     this._camera = null;
     this._renderer = null;
+    this._offset = 0;
   }
 
   dispose() {
@@ -47,9 +50,14 @@ export default class ParallaxController extends Script {
   }
 
   onUpdate(deltaTime) {
-    const { _camera, _renderer } = this;
+    const { tileWidth, _camera, _renderer, _offset } = this;
     if (!!_camera && !!_renderer) {
-      _renderer.width = _camera.cachedWorldWidth * 2;
+      const { entity, overrideUniforms } = _renderer;
+      const scale = _camera.cachedWorldWidth / tileWidth;
+      entity.setScale(scale, 1);
+      overrideUniforms.uTiles = [scale, 1];
+      overrideUniforms.uOffset = [_offset / scale, 0];
+      _renderer.overrideUniforms = overrideUniforms;
     }
   }
 
