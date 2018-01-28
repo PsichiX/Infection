@@ -18,7 +18,7 @@ export default class CameraController extends Script {
   constructor() {
     super();
 
-    this.zoomOut = 1024,
+    this.zoomOut = 1024;
     this.x = 0;
     this.y = 0;
     this.xOffset = 0;
