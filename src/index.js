@@ -52,5 +52,5 @@ AssetSystem.load('json://config.json')
   .then(configAsset => AssetSystem.loadAll(configAsset.data.assets))
   .then(() => System.events.triggerLater(
     'change-scene',
-    'scene://scenes/failure-outro.json'
+    'scene://scenes/game.json'
   ));

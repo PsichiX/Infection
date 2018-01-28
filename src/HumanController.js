@@ -55,6 +55,7 @@ export default class HumanController extends Script {
     this._state = State.WALK;
     this._isControlled = false;
     this._input = null;
+    this._onRun = this.onRun.bind(this);
   }
 
   dispose() {
@@ -110,10 +111,13 @@ export default class HumanController extends Script {
     if (!this._input) {
       throw new Error('There is no InputHandler component!');
     }
+
+    System.events.on('run', this._onRun);
   }
 
   onDetach() {
     System.events.trigger('unregister-human', this);
+    System.events.off('run', this._onRun);
   }
 
   onUpdate(deltaTime) {
@@ -152,6 +156,10 @@ export default class HumanController extends Script {
         entity.setScale(Math.abs(scale[0]) * -this._direction, scale[1]);
       }
     }
+  }
+
+  onRun() {
+    this.triggerState(State.RUN);
   }
 
 }

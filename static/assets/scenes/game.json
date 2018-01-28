@@ -38,7 +38,7 @@
               "captureEntity": ".."
             },
             "CameraController": {
-              "zoomOut": 20000,
+              "zoomOut": 2000,
               "yOffset": 550
             }
           }
