@@ -58,13 +58,16 @@ export default class HealthController extends Script {
     if (!this._icon) {
       throw new Error('There is no icon Sprite component!');
     }
-    this._progress = icon.getComponent('Sprite');
+    this._progress = progress.getComponent('Sprite');
     if (!this._progress) {
       throw new Error('There is no progress Sprite component!');
     }
 
     System.events.on('health-change', this._onHealthChange);
     System.events.on('icon-change', this._onIconChange);
+
+    this.onHealthChange(0);
+    this.onIconChange(null);
   }
 
   onDetach() {
@@ -81,8 +84,13 @@ export default class HealthController extends Script {
 
   onIconChange(name){
     const { icons, _icon } = this;
-    if (!!icons && _icon && name in icons) {
-      _icon.overrideBaseTexture = icons[name];
+    if (!!icons && _icon) {
+      if (name in icons) {
+        _icon.overrideBaseTexture = icons[name];
+        _icon.entity.active = true;
+      } else {
+        _icon.entity.active = false;
+      }
     }
   }
 

@@ -35,7 +35,7 @@
               "captureEntity": ".."
             },
             "CameraController": {
-              "zoomOut": 2048,
+              "zoomOut": 2000,
               "yOffset": 550
             }
           }
@@ -78,7 +78,7 @@
               "tileWidth": 2000,
               "tileScale": 4,
               "cameraLock": "top",
-              "cameraLockOffset": 700
+              "cameraLockOffset": 550
             }
           }
         },
@@ -259,9 +259,6 @@
           "children": [
             {
               "name": "human",
-              "transform": {
-                "scale": 0.5
-              },
               "components": {
                 "PrefabInstance": {
                   "asset": "prefabs/human.json",
@@ -270,6 +267,9 @@
               }
             }
           ]
+        },
+        {
+          "name": "interactive"
         }
       ]
     },

@@ -1,20 +1,16 @@
 {
   "name": "human",
   "components": {
-    "Sprite": {
-      "shader": "shaders/sprite-transparent.json",
-      "overrideBaseTexture": "images/mockups/mockup-poke.png",
-      "width": -1,
-      "height": -1,
-      "xOrigin": 0.5,
-      "yOrigin": 1
-    },
     "HumanController": {
       "area": [-5000, 5000],
-      "speedWalk": 5,
+      "speedWalk": 4,
       "speedRun": 15,
       "yRange": 30,
-      "speedRandomOffset": 2
+      "speedRandomOffset": 1,
+      "prefabs": [
+        "scene://skeletons/stronger.prefab.json",
+        "scene://skeletons/brainiac.prefab.json"
+      ]
     }
   }
 }

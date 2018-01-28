@@ -1,0 +1,299 @@
+{
+  "name": "stronger",
+  "components": {
+    "Skeleton": {
+      "asset": "skeletons/stronger.skeleton.json"
+    },
+    "SortedActions": {
+      "actions": [
+        "render",
+        "render-layer",
+        "preview"
+      ],
+      "metaPropOrder": "drawOrder"
+    }
+  },
+  "children": [
+    {
+      "name": "bone:root",
+      "transform": {
+        "position": [
+          0,
+          0
+        ],
+        "rotation": 0,
+        "scale": [
+          1,
+          1
+        ]
+      },
+      "components": {},
+      "children": [
+        {
+          "name": "bone:corpus",
+          "transform": {
+            "position": [
+              13,
+              -106
+            ],
+            "rotation": -87.53,
+            "scale": [
+              1,
+              1
+            ]
+          },
+          "components": {},
+          "children": [
+            {
+              "name": "slot:postacie_0000s_0001_torso",
+              "meta": {
+                "drawOrder": 4
+              },
+              "transform": {
+                "position": [
+                  73.88,
+                  18.83
+                ],
+                "rotation": 87.53,
+                "scale": [
+                  1,
+                  1
+                ]
+              },
+              "components": {
+                "AtlasSprite": {
+                  "shader": "shaders/sprite-transparent.json",
+                  "atlas": "skeletons/stronger.atlas.json:postacie_0000s_0001_torso",
+                  "width": 220,
+                  "height": 205,
+                  "xOrigin": 0.5,
+                  "yOrigin": 0.5
+                }
+              }
+            },
+            {
+              "name": "bone:head",
+              "transform": {
+                "position": [
+                  151.35,
+                  5.33
+                ],
+                "rotation": 7.31,
+                "scale": [
+                  1,
+                  1
+                ]
+              },
+              "components": {},
+              "children": [
+                {
+                  "name": "slot:postacie_0000s_0002_head",
+                  "meta": {
+                    "drawOrder": 0
+                  },
+                  "transform": {
+                    "position": [
+                      88.56,
+                      3.28
+                    ],
+                    "rotation": 80.22,
+                    "scale": [
+                      1,
+                      1
+                    ]
+                  },
+                  "components": {
+                    "AtlasSprite": {
+                      "shader": "shaders/sprite-transparent.json",
+                      "atlas": "skeletons/stronger.atlas.json:postacie_0000s_0002_head",
+                      "width": 196,
+                      "height": 217,
+                      "xOrigin": 0.5,
+                      "yOrigin": 0.5
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "bone:left-arm",
+              "transform": {
+                "position": [
+                  129.98,
+                  89.47
+                ],
+                "rotation": 150.21,
+                "scale": [
+                  1,
+                  1
+                ]
+              },
+              "components": {},
+              "children": [
+                {
+                  "name": "slot:postacie_0000s_0000_left_arm",
+                  "meta": {
+                    "drawOrder": 5
+                  },
+                  "transform": {
+                    "position": [
+                      50.97,
+                      1.56
+                    ],
+                    "rotation": -62.68,
+                    "scale": [
+                      1,
+                      1
+                    ]
+                  },
+                  "components": {
+                    "AtlasSprite": {
+                      "shader": "shaders/sprite-transparent.json",
+                      "atlas": "skeletons/stronger.atlas.json:postacie_0000s_0000_left_arm",
+                      "width": 84,
+                      "height": 148,
+                      "xOrigin": 0.5,
+                      "yOrigin": 0.5
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "bone:left-leg",
+              "transform": {
+                "position": [
+                  -0.1,
+                  67.07
+                ],
+                "rotation": 174.48,
+                "scale": [
+                  1,
+                  1
+                ]
+              },
+              "components": {},
+              "children": [
+                {
+                  "name": "slot:postacie_0000s_0005_lesft_leg",
+                  "meta": {
+                    "drawOrder": 3
+                  },
+                  "transform": {
+                    "position": [
+                      34.9,
+                      2.86
+                    ],
+                    "rotation": -86.96,
+                    "scale": [
+                      1,
+                      1
+                    ]
+                  },
+                  "components": {
+                    "AtlasSprite": {
+                      "shader": "shaders/sprite-transparent.json",
+                      "atlas": "skeletons/stronger.atlas.json:postacie_0000s_0005_lesft_leg",
+                      "width": 72,
+                      "height": 139,
+                      "xOrigin": 0.5,
+                      "yOrigin": 0.5
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "bone:right-arm",
+              "transform": {
+                "position": [
+                  136.93,
+                  -73.98
+                ],
+                "rotation": -152.53,
+                "scale": [
+                  1,
+                  1
+                ]
+              },
+              "components": {},
+              "children": [
+                {
+                  "name": "slot:postacie_0000s_0003_right_arm",
+                  "meta": {
+                    "drawOrder": 1
+                  },
+                  "transform": {
+                    "position": [
+                      50.58,
+                      -8.36
+                    ],
+                    "rotation": -119.95,
+                    "scale": [
+                      1,
+                      1
+                    ]
+                  },
+                  "components": {
+                    "AtlasSprite": {
+                      "shader": "shaders/sprite-transparent.json",
+                      "atlas": "skeletons/stronger.atlas.json:postacie_0000s_0003_right_arm",
+                      "width": 91,
+                      "height": 164,
+                      "xOrigin": 0.5,
+                      "yOrigin": 0.5
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "bone:right-leg",
+              "transform": {
+                "position": [
+                  -11.62,
+                  -60.55
+                ],
+                "rotation": -166.01,
+                "scale": [
+                  1,
+                  1
+                ]
+              },
+              "components": {},
+              "children": [
+                {
+                  "name": "slot:postacie_0000s_0004_right_leg",
+                  "meta": {
+                    "drawOrder": 2
+                  },
+                  "transform": {
+                    "position": [
+                      36.68,
+                      0.63
+                    ],
+                    "rotation": -106.46,
+                    "scale": [
+                      1,
+                      1
+                    ]
+                  },
+                  "components": {
+                    "AtlasSprite": {
+                      "shader": "shaders/sprite-transparent.json",
+                      "atlas": "skeletons/stronger.atlas.json:postacie_0000s_0004_right_leg",
+                      "width": 99,
+                      "height": 129,
+                      "xOrigin": 0.5,
+                      "yOrigin": 0.5
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

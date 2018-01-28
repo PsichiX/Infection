@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "image": "skeletons/brainiac.png",
+    "size": {
+      "w": 1024,
+      "h": 256
+    },
+    "scale": "1"
+  },
+  "frames": {
+    "postacie_0002s_0000_left_arm": {
+      "frame": {
+        "x": 435,
+        "y": 63,
+        "w": 63,
+        "h": 136
+      }
+    },
+    "postacie_0002s_0001_torso": {
+      "frame": {
+        "x": 161,
+        "y": 16,
+        "w": 124,
+        "h": 183
+      }
+    },
+    "postacie_0002s_0002_head": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 157,
+        "h": 197
+      }
+    },
+    "postacie_0002s_0003_right_arm": {
+      "frame": {
+        "x": 368,
+        "y": 68,
+        "w": 65,
+        "h": 131
+      }
+    },
+    "postacie_0002s_0004_right_leg": {
+      "frame": {
+        "x": 500,
+        "y": 72,
+        "w": 65,
+        "h": 127
+      }
+    },
+    "postacie_0002s_0005_left_leg": {
+      "frame": {
+        "x": 287,
+        "y": 68,
+        "w": 79,
+        "h": 131
+      }
+    }
+  }
+}
