@@ -35,6 +35,7 @@ export default class HumanController extends Script {
   onAttach() {
     super.onAttach();
 
+    const { area } = this;
     this.entity.setPosition(randomRange(area[0], area[1]), 0);
 
     System.events.trigger('register-human', this);

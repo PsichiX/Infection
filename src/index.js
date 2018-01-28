@@ -5,6 +5,7 @@ import GameController from './GameController';
 import BuildingController from './BuildingController';
 import HealthController from "./HealthController";
 import HumanController from "./HumanController";
+import CameraController from "./CameraController";
 
 lazyInitialization({
   render: { screen: 'screen-0' },
@@ -24,6 +25,7 @@ EntitySystem.registerComponent('GameController', GameController.factory);
 EntitySystem.registerComponent('BuildingController', BuildingController.factory);
 EntitySystem.registerComponent('HealthController', HealthController.factory);
 EntitySystem.registerComponent('HumanController', HumanController.factory);
+EntitySystem.registerComponent('CameraController', CameraController.factory);
 
 vec4.set(RenderSystem.clearColor, 0, 0, 0, 0);
 

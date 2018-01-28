@@ -28,17 +28,15 @@
       "children": [
         {
           "name": "camera",
-          "transform": {
-            "position": [
-              0,
-              -1800
-            ]
-          },
           "components": {
             "Camera2D": {
-              "zoomOut": 5000,
+              "zoomOut": 1024,
               "zoomMode": "keep-aspect",
               "captureEntity": ".."
+            },
+            "CameraController": {
+              "zoomOut": 1000,
+              "yOffset": 550
             }
           }
         },

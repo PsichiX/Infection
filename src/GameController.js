@@ -1,4 +1,5 @@
 import { System, Script } from 'oxygen-core';
+import HumanController from './HumanController';
 import { instantiatePrefab } from './utils';
 
 const REPETITIONS = 1;

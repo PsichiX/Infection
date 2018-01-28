@@ -69,7 +69,8 @@ export default class ParallaxController extends Script {
     } = this;
     if (!!_camera && !!_renderer) {
       const { entity, overrideUniforms } = _renderer;
-      const scale = _camera.cachedWorldWidth / tileWidth;
+      // this magic number is an ugly hack to make sure to remove blank borders.
+      const scale = 1.001 * _camera.cachedWorldWidth / tileWidth;
       entity.setScale(scale, tileScale);
       if (cameraLock === 'top') {
         entity.setPosition(0, -_camera.cachedWorldHeight + cameraLockOffset);

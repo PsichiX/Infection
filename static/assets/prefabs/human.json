@@ -11,8 +11,8 @@
     },
     "HumanController": {
       "area": [-5000, 5000],
-      "speedWalk": 20,
-      "speedRun": 40
+      "speedWalk": 5,
+      "speedRun": 15
     }
   }
 }
