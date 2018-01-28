@@ -10,23 +10,6 @@
   },
   "children": [
     {
-      "name": "ufo",
-      "components": {
-        "Sprite": {
-          "shader": "shaders/sprite-transparent.json",
-          "overrideBaseTexture": "images/ufo.png",
-          "width": -1,
-          "height": -1,
-          "xOrigin": 0.5,
-          "yOrigin": 0.5
-        },
-        "UfoController": {
-          "speed": 2,
-          "range": 20
-        }
-      }
-    },
-    {
       "name": "game-over",
       "transform": {
         "scale": 2,
@@ -59,7 +42,7 @@
       "components": {
         "Sprite": {
           "shader": "shaders/sprite-transparent.json",
-          "overrideBaseTexture": "images/press-to-start.png",
+          "overrideBaseTexture": "images/press-to-restart.png",
           "color": "#FFFFFF00",
           "width": -1,
           "height": -1,

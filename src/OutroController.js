@@ -31,7 +31,7 @@ export default class OutroController extends Script {
         const { AssetSystem } = System.systems;
         this._input.setup(AssetSystem.get('json://config.json').data.input);
 
-        tween(1, 0, 3000, v => {
+        tween(1, 0, 300, v => {
             const fadeout = entity
                 .findEntity('./fadeout')
                 .getComponent('RectangleRenderer');
@@ -46,7 +46,7 @@ export default class OutroController extends Script {
                         .getComponent('Sprite');
                     vec4.set(gameOver.color, 1, 1, 1, v);
                 }, TWEEN.Easing.Quadratic.Out),
-                wait(1000).then(() => tween(0, 1, 1000, v => {
+                wait(700).then(() => tween(0, 1, 1000, v => {
                     const press = entity
                         .findEntity('./press-to-restart')
                         .getComponent('Sprite');
