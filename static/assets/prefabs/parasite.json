@@ -1,0 +1,15 @@
+{
+  "name": "parasite",
+  "components": {
+    "RectangleRenderer": {
+      "shader": "shaders/color-transparent.json",
+      "color": "#FF0000FF",
+      "width": 320,
+      "height": 320
+    },
+    "ParasiteController": {
+      "input": "/",
+      "gravity": 1000
+    }
+  }
+}

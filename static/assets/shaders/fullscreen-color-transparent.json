@@ -1,0 +1,18 @@
+{
+  "vertex": "shaders/fullscreen-color.vert",
+  "fragment": "shaders/fullscreen-color.frag",
+  "layout": {
+    "aPosition": {
+      "size": 2,
+      "stride": 2,
+      "offset": 0
+    }
+  },
+  "uniforms": {
+    "uColor": [1, 1, 1, 1]
+  },
+  "blending": {
+    "source": "src-alpha",
+    "destination": "one-minus-src-alpha"
+  }
+}

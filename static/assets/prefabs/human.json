@@ -10,7 +10,8 @@
       "prefabs": [
         "scene://skeletons/stronger.prefab.json",
         "scene://skeletons/brainiac.prefab.json"
-      ]
+      ],
+      "input": "/"
     }
   }
 }

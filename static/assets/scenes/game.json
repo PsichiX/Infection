@@ -1,11 +1,14 @@
 {
   "name": "root",
   "components": {
+    "InputHandler": {},
     "GameController": {
       "buildings": "/world/buildings",
       "actors": "/world/actors",
+      "ui": "/ui",
+      "intro": "/intro",
       "buildingsSeparation": 1024,
-      "buildingsCount": 25,
+      "buildingsCount": 50,
       "buildingPrefabs": [
         "scene://prefabs/building-1.json",
         "scene://prefabs/building-2.json",
@@ -35,7 +38,7 @@
               "captureEntity": ".."
             },
             "CameraController": {
-              "zoomOut": 2000,
+              "zoomOut": 20000,
               "yOffset": 550
             }
           }
@@ -258,6 +261,17 @@
           },
           "children": [
             {
+              "name": "parasite",
+              "transform": {
+                "position": [0, -19000]
+              },
+              "components": {
+                "PrefabInstance": {
+                  "asset": "prefabs/parasite.json"
+                }
+              }
+            },
+            {
               "name": "human",
               "components": {
                 "PrefabInstance": {
@@ -275,6 +289,7 @@
     },
     {
       "name": "ui",
+      "active": true,
       "transform": {
         "position": [
           50,
@@ -363,6 +378,19 @@
               }
             }
           ]
+        },
+        {
+          "name": "fadeout",
+          "components": {
+            "RectangleRenderer": {
+              "shader": "shaders/fullscreen-color-transparent.json",
+              "color": "#000000FF",
+              "width": 2,
+              "height": 2,
+              "xOrigin": 0.5,
+              "yOrigin": 0.5
+            }
+          }
         }
       ]
     }

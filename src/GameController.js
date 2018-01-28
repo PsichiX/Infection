@@ -1,6 +1,7 @@
-import { System, Script } from 'oxygen-core';
+import { System, Script, vec4 } from 'oxygen-core';
+import TWEEN from '@tweenjs/tween.js';
 import HumanController from './HumanController';
-import { instantiatePrefab } from './utils';
+import { instantiatePrefab, tween, lerp, wait } from './utils';
 
 const REPETITIONS = 1;
 const TRIES_LIMIT = 10;
@@ -12,6 +13,7 @@ export default class GameController extends Script {
       ...Script.propsTypes,
       buildings: 'string',
       actors: 'string',
+      ui: 'string',
       buildingsSeparation: 'number',
       buildingsCount: 'number',
       buildingPrefabs: 'array(string)',
@@ -29,6 +31,7 @@ export default class GameController extends Script {
 
     this.buildings = '.';
     this.actors = '.';
+    this.ui = '.';
     this.buildingsSeparation = 100;
     this.buildingsCount = 5;
     this.buildingPrefabs = null;
@@ -36,6 +39,7 @@ export default class GameController extends Script {
     this.hydrantPrefabs = null;
     this._buildings = null;
     this._actors = null;
+    this._ui = null;
     this._humans = new Set();
     this._onRegisterHuman = this.onRegisterHuman.bind(this);
     this._onUnregisterHuman = this.onUnregisterHuman.bind(this);
@@ -46,11 +50,13 @@ export default class GameController extends Script {
 
     this.buildings = null;
     this.actors = null;
+    this.ui = null;
     this.buildingPrefabs = null;
     this.lampPrefabs = null;
     this.hydrantPrefabs = null;
     this._buildings = null;
     this._actors = null;
+    this._ui = null;
     this._humans = null;
     this._onRegisterHuman = null;
     this._onUnregisterHuman = null;
@@ -70,10 +76,29 @@ export default class GameController extends Script {
       throw new Error(`There is no entity: ${this.actors}`);
     }
 
+    this._ui = entity.findEntity(this.ui);
+    if (!this._ui) {
+      throw new Error(`There is no entity: ${this.ui}`);
+    }
+
+    const input = entity.getComponent('InputHandler');
+    if (!input) {
+      throw new Error('There is no InputHandler component!');
+    }
+
+    const { AssetSystem } = System.systems;
+    input.setup(AssetSystem.get('json://config.json').data.input);
     this.populateBuildings();
 
     System.events.on('register-human', this._onRegisterHuman);
     System.events.on('unregister-human', this._onUnregisterHuman);
+
+    tween(1, 0, 3000, v => {
+      const fadeout = this._ui
+        .findEntity('./fadeout')
+        .getComponent('RectangleRenderer');
+      vec4.set(fadeout.color, 0, 0, 0, v);
+    });
   }
 
   onDetach() {

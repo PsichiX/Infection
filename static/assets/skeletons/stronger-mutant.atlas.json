@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "image": "skeletons/stronger-mutant.png",
+    "size": {
+      "w": 1024,
+      "h": 512
+    },
+    "scale": "1"
+  },
+  "frames": {
+    "postacie_0001s_0000_Warstwa-17": {
+      "frame": {
+        "x": 720,
+        "y": 188,
+        "w": 163,
+        "h": 247
+      }
+    },
+    "postacie_0001s_0001_Warstwa-18": {
+      "frame": {
+        "x": 422,
+        "y": 183,
+        "w": 296,
+        "h": 252
+      }
+    },
+    "postacie_0001s_0002_Warstwa-6": {
+      "frame": {
+        "x": 2,
+        "y": 100,
+        "w": 418,
+        "h": 335
+      }
+    },
+    "postacie_0001s_0003_Warstwa-16": {
+      "frame": {
+        "x": 885,
+        "y": 174,
+        "w": 107,
+        "h": 261
+      }
+    },
+    "postacie_0001s_0004_right_arm": {
+      "frame": {
+        "x": 69,
+        "y": 5,
+        "w": 68,
+        "h": 93
+      }
+    },
+    "postacie_0001s_0005_left_leg": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 65,
+        "h": 96
+      }
+    }
+  }
+}

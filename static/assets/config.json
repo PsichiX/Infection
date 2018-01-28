@@ -1,8 +1,10 @@
 {
   "assets": [
     "shader://shaders/sprite-transparent.json",
+    "shader://shaders/color-transparent.json",
     "shader://shaders/sprite-tiled-transparent.json",
     "shader://shaders/fullscreen-tiled.json",
+    "shader://shaders/fullscreen-color-transparent.json",
     "shader://shaders/text-outline-transparent.json",
     "image://images/sky.png",
     "image://images/parallax1.png",
@@ -11,10 +13,13 @@
     "image://images/mountains.png",
     "image://images/road.png",
     "image://images/road-walk.png",
+    "image://images/ufo.png",
     "image://images/hydrant.png",
     "image://images/lamp.png",
     "image://images/lamp-broken-1.png",
     "image://images/lamp-broken-2.png",
+    "image://images/logo.png",
+    "image://images/press-to-start.png",
     "image://images/building-bottom-1.png",
     "image://images/building-bottom-2.png",
     "image://images/building-bottom-3.png",
@@ -39,7 +44,6 @@
     "image://images/ui-hp-foreground.png",
     "image://images/ui-icon-brainiac.png",
     "image://images/ui-icon-stronger.png",
-    "image://images/mockups/mockup-poke.png",
     "font://fonts/verdana.fnt",
     "skeleton://skeletons/stronger.skeleton.json",
     "scene://skeletons/stronger.prefab.json",
@@ -47,6 +51,9 @@
     "skeleton://skeletons/brainiac.skeleton.json",
     "scene://skeletons/brainiac.prefab.json",
     "atlas://skeletons/brainiac.atlas.json",
+    "skeleton://skeletons/stronger-mutant.skeleton.json",
+    "scene://skeletons/stronger-mutant.prefab.json",
+    "atlas://skeletons/stronger-mutant.atlas.json",
     "scene://prefabs/building-1.json",
     "scene://prefabs/building-2.json",
     "scene://prefabs/building-3.json",
@@ -57,6 +64,39 @@
     "scene://prefabs/lamp.json",
     "scene://prefabs/hydrant.json",
     "scene://prefabs/human.json",
+    "scene://prefabs/parasite.json",
+    "scene://scenes/intro.json",
     "scene://scenes/game.json"
-  ]
+  ],
+  "input": {
+    "axes": {
+      "move-x": {
+        "gamepadAxis": "primary-x",
+        "keys": ["a", -1, "d", 1]
+      },
+      "move-y": {
+        "gamepadAxis": "primary-y",
+        "keys": ["w", -1, "s", 1]
+      },
+      "aim-x": {
+        "gamepadAxis": "secondary-x",
+        "mouse": "x"
+      },
+      "aim-y": {
+        "gamepadAxis": "secondary-y",
+        "mouse": "y"
+      }
+    },
+    "triggers": {
+      "select": {
+        "gamepad": 0,
+        "mouse": "left",
+        "key": 32
+      },
+      "back": {
+        "gamepad": 9,
+        "key": 8
+      }
+    }
+  }
 }

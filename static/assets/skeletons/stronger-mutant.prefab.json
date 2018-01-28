@@ -1,0 +1,299 @@
+{
+  "name": "stronger-mutant",
+  "components": {
+    "Skeleton": {
+      "asset": "skeletons/stronger-mutant.skeleton.json"
+    },
+    "SortedActions": {
+      "actions": [
+        "render",
+        "render-layer",
+        "preview"
+      ],
+      "metaPropOrder": "drawOrder"
+    }
+  },
+  "children": [
+    {
+      "name": "bone:root",
+      "transform": {
+        "position": [
+          0,
+          0
+        ],
+        "rotation": 0,
+        "scale": [
+          1,
+          1
+        ]
+      },
+      "components": {},
+      "children": [
+        {
+          "name": "bone:corpus",
+          "transform": {
+            "position": [
+              -3.47,
+              -93.21
+            ],
+            "rotation": -95.34,
+            "scale": [
+              1,
+              1
+            ]
+          },
+          "components": {},
+          "children": [
+            {
+              "name": "slot:postacie_0001s_0002_Warstwa-6",
+              "meta": {
+                "drawOrder": 3
+              },
+              "transform": {
+                "position": [
+                  126.69,
+                  -16.73
+                ],
+                "rotation": 95.34,
+                "scale": [
+                  1,
+                  1
+                ]
+              },
+              "components": {
+                "AtlasSprite": {
+                  "shader": "shaders/sprite-transparent.json",
+                  "atlas": "skeletons/stronger-mutant.atlas.json:postacie_0001s_0002_Warstwa-6",
+                  "width": 418,
+                  "height": 335,
+                  "xOrigin": 0.5,
+                  "yOrigin": 0.5
+                }
+              }
+            },
+            {
+              "name": "bone:arm-left",
+              "transform": {
+                "position": [
+                  183.6,
+                  133.43
+                ],
+                "rotation": 160.73,
+                "scale": [
+                  1,
+                  1
+                ]
+              },
+              "components": {},
+              "children": [
+                {
+                  "name": "slot:postacie_0001s_0000_Warstwa-17",
+                  "meta": {
+                    "drawOrder": 4
+                  },
+                  "transform": {
+                    "position": [
+                      72.31,
+                      -14.27
+                    ],
+                    "rotation": -65.39,
+                    "scale": [
+                      1,
+                      1
+                    ]
+                  },
+                  "components": {
+                    "AtlasSprite": {
+                      "shader": "shaders/sprite-transparent.json",
+                      "atlas": "skeletons/stronger-mutant.atlas.json:postacie_0001s_0000_Warstwa-17",
+                      "width": 163,
+                      "height": 247,
+                      "xOrigin": 0.5,
+                      "yOrigin": 0.5
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "bone:head",
+              "transform": {
+                "position": [
+                  100.29,
+                  -39.89
+                ],
+                "rotation": 4.63,
+                "scale": [
+                  1,
+                  1
+                ]
+              },
+              "components": {},
+              "children": [
+                {
+                  "name": "slot:postacie_0001s_0001_Warstwa-18",
+                  "meta": {
+                    "drawOrder": 5
+                  },
+                  "transform": {
+                    "position": [
+                      101.86,
+                      14.01
+                    ],
+                    "rotation": 90.71,
+                    "scale": [
+                      1,
+                      1
+                    ]
+                  },
+                  "components": {
+                    "AtlasSprite": {
+                      "shader": "shaders/sprite-transparent.json",
+                      "atlas": "skeletons/stronger-mutant.atlas.json:postacie_0001s_0001_Warstwa-18",
+                      "width": 296,
+                      "height": 252,
+                      "xOrigin": 0.5,
+                      "yOrigin": 0.5
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "bone:leg-left",
+              "transform": {
+                "position": [
+                  -11.61,
+                  60.99
+                ],
+                "rotation": 177.85,
+                "scale": [
+                  1,
+                  1
+                ]
+              },
+              "components": {},
+              "children": [
+                {
+                  "name": "slot:postacie_0001s_0005_left_leg",
+                  "meta": {
+                    "drawOrder": 1
+                  },
+                  "transform": {
+                    "position": [
+                      42.67,
+                      6.6
+                    ],
+                    "rotation": -82.5,
+                    "scale": [
+                      1,
+                      1
+                    ]
+                  },
+                  "components": {
+                    "AtlasSprite": {
+                      "shader": "shaders/sprite-transparent.json",
+                      "atlas": "skeletons/stronger-mutant.atlas.json:postacie_0001s_0005_left_leg",
+                      "width": 65,
+                      "height": 96,
+                      "xOrigin": 0.5,
+                      "yOrigin": 0.5
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "bone:leg-right",
+              "transform": {
+                "position": [
+                  2.73,
+                  -60.83
+                ],
+                "rotation": -169.72,
+                "scale": [
+                  1,
+                  1
+                ]
+              },
+              "components": {},
+              "children": [
+                {
+                  "name": "slot:postacie_0001s_0004_right_arm",
+                  "meta": {
+                    "drawOrder": 0
+                  },
+                  "transform": {
+                    "position": [
+                      47.25,
+                      -0.14
+                    ],
+                    "rotation": -94.94,
+                    "scale": [
+                      1,
+                      1
+                    ]
+                  },
+                  "components": {
+                    "AtlasSprite": {
+                      "shader": "shaders/sprite-transparent.json",
+                      "atlas": "skeletons/stronger-mutant.atlas.json:postacie_0001s_0004_right_arm",
+                      "width": 68,
+                      "height": 93,
+                      "xOrigin": 0.5,
+                      "yOrigin": 0.5
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "bone:right-arm",
+              "transform": {
+                "position": [
+                  187.73,
+                  -163.74
+                ],
+                "rotation": -171.87,
+                "scale": [
+                  1,
+                  1
+                ]
+              },
+              "components": {},
+              "children": [
+                {
+                  "name": "slot:postacie_0001s_0003_Warstwa-16",
+                  "meta": {
+                    "drawOrder": 2
+                  },
+                  "transform": {
+                    "position": [
+                      49.11,
+                      20.19
+                    ],
+                    "rotation": -92.79,
+                    "scale": [
+                      1,
+                      1
+                    ]
+                  },
+                  "components": {
+                    "AtlasSprite": {
+                      "shader": "shaders/sprite-transparent.json",
+                      "atlas": "skeletons/stronger-mutant.atlas.json:postacie_0001s_0003_Warstwa-16",
+                      "width": 107,
+                      "height": 261,
+                      "xOrigin": 0.5,
+                      "yOrigin": 0.5
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

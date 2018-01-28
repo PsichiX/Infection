@@ -9,6 +9,7 @@
     "update": "npm update --save"
   },
   "dependencies": {
+    "@tweenjs/tween.js": "^17.2.0",
     "babel-core": "latest",
     "babel-loader": "latest",
     "babel-plugin-transform-object-rest-spread": "latest",

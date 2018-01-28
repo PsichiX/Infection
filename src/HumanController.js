@@ -27,7 +27,8 @@ export default class HumanController extends Script {
       speedRun: 'number',
       yRange: 'number',
       speedRandomOffset: 'number',
-      prefabs: 'array(string)'
+      prefabs: 'array(string)',
+      input: 'string'
     };
   }
 
@@ -48,10 +49,12 @@ export default class HumanController extends Script {
     this.yRange = 0;
     this.speedRandomOffset = 0;
     this.prefabs = [];
+    this.input = '.';
     this._direction = Math.random() > 0.5 ? 1 : -1;
     this._skeleton = null;
     this._state = State.WALK;
     this._isControlled = false;
+    this._input = null;
   }
 
   dispose() {
@@ -59,7 +62,9 @@ export default class HumanController extends Script {
 
     this.area = null;
     this.prefabs = null;
+    this.input = null;
     this._skeleton = null;
+    this._input = null;
   }
 
   triggerState(id, forced = false) {
@@ -73,8 +78,8 @@ export default class HumanController extends Script {
   onAttach() {
     super.onAttach();
 
-    const { area, yRange, speedRandomOffset, prefabs } = this;
-    this.entity.setPosition(
+    const { entity, area, yRange, speedRandomOffset, prefabs, input } = this;
+    entity.setPosition(
       randomRange(area[0], area[1]),
       randomRange(-yRange, yRange)
     );
@@ -88,13 +93,23 @@ export default class HumanController extends Script {
       prefabs[(Math.random() * prefabs.length) | 0]
     );
     instance.setScale(0.5, 0.5);
-    instance.parent = this.entity;
+    instance.parent = entity;
     const skeleton = this._skeleton = instance.getComponent('Skeleton');
     if (!skeleton) {
       throw new Error('There is no human Skeleton component!');
     }
 
     this.triggerState(this._state, true);
+
+    const inputEntity = entity.findEntity(input);
+    if (!inputEntity) {
+      throw new Error(`There is no entity: ${input}`);
+    }
+
+    this._input = inputEntity.getComponent('InputHandler');
+    if (!this._input) {
+      throw new Error('There is no InputHandler component!');
+    }
   }
 
   onDetach() {
@@ -102,23 +117,40 @@ export default class HumanController extends Script {
   }
 
   onUpdate(deltaTime) {
-    const { entity, area, speedWalk, speedRun } = this;
+    const {
+      entity,
+      area,
+      speedWalk,
+      speedRun,
+      _isControlled,
+      _input
+    } = this;
     const { position, scale } = entity;
-    const speed = this._state === State.RUN ? speedRun : speedWalk;
-    const targetX = position[0] + this._direction * speed;
 
-    if (targetX < area[0]) {
-      this._direction = 1;
-      entity.setPosition(area[0], position[1]);
-    } else if (targetX > area[1]) {
-      this._direction = -1;
-      entity.setPosition(area[1], position[1]);
+    if (!!this._isControlled && !!_input) {
+      console.log(_input.getAxis('move-x'));
+      console.log(_input.getAxis('move-y'));
+      console.log(_input.getAxis('aim-x'));
+      console.log(_input.getAxis('aim-y'));
     } else {
-      entity.setPosition(targetX, position[1]);
-    }
+      const speed = this._state === (State.RUN || _isControlled)
+      ? speedRun
+      : speedWalk;
+      const targetX = position[0] + this._direction * speed;
 
-    if (Math.sign(scale[0]) !== Math.sign(-this._direction)) {
-      entity.setScale(Math.abs(scale[0]) * -this._direction, scale[1]);
+      if (targetX < area[0]) {
+        this._direction = 1;
+        entity.setPosition(area[0], position[1]);
+      } else if (targetX > area[1]) {
+        this._direction = -1;
+        entity.setPosition(area[1], position[1]);
+      } else {
+        entity.setPosition(targetX, position[1]);
+      }
+
+      if (Math.sign(scale[0]) !== Math.sign(-this._direction)) {
+        entity.setScale(Math.abs(scale[0]) * -this._direction, scale[1]);
+      }
     }
   }
 
