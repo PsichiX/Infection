@@ -12,7 +12,9 @@
     "HumanController": {
       "area": [-5000, 5000],
       "speedWalk": 5,
-      "speedRun": 15
+      "speedRun": 15,
+      "yRange": 30,
+      "speedRandomOffset": 2
     }
   }
 }

@@ -35,7 +35,7 @@
               "captureEntity": ".."
             },
             "CameraController": {
-              "zoomOut": 1000,
+              "zoomOut": 2048,
               "yOffset": 550
             }
           }
@@ -264,7 +264,8 @@
               },
               "components": {
                 "PrefabInstance": {
-                  "asset": "prefabs/human.json"
+                  "asset": "prefabs/human.json",
+                  "count": 20
                 }
               }
             }
