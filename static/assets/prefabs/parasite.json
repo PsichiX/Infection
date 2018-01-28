@@ -7,9 +7,16 @@
       "width": 320,
       "height": 320
     },
+    "ContactBox": {
+      "width": 320,
+      "height": 320,
+      "xOrigin": 0.5,
+      "yOrigin": 0.5
+    },
     "ParasiteController": {
       "input": "/",
-      "gravity": 1000
+      "gravity": 500,
+      "speed": 70
     }
   }
 }

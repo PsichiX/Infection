@@ -1,4 +1,6 @@
-import { System, Script } from 'oxygen-core';
+import { System, Script, vec2 } from 'oxygen-core';
+
+const cachedVec2 = vec2.create();
 
 export default class ParasiteController extends Script {
 
@@ -6,7 +8,8 @@ export default class ParasiteController extends Script {
     return {
       ...Script.propsTypes,
       input: 'string',
-      gravity: 'number'
+      gravity: 'number',
+      speed: 'number'
     };
   }
 
@@ -19,6 +22,9 @@ export default class ParasiteController extends Script {
 
     this.input = '.';
     this.gravity = 0;
+    this.speed = 100;
+    this._xVelocity = 0;
+    this._yVelocity = 0;
     this._input = null;
     this._controlling = null;
     this._isDead = false;
@@ -59,9 +65,21 @@ export default class ParasiteController extends Script {
       const { _input } = this;
       const { entity } = this;
       const { position } = entity;
-      const targetY = position[1] + this.gravity * deltaTime;
+      this._xVelocity += _input.getAxis('move-x') * this.speed;
+      this._xVelocity *= 0.92;
+      this._yVelocity += this.gravity * deltaTime;
 
-      entity.setPosition(position[0], targetY);
+      const targetX = position[0] + this._xVelocity * deltaTime;
+      const targetY = position[1] + this._yVelocity * deltaTime;
+      vec2.set(
+        cachedVec2,
+        targetX - position[0],
+        targetY - position[1]
+      );
+      vec2.normalize(cachedVec2, cachedVec2);
+      const angle = Math.atan2(cachedVec2[1], cachedVec2[0]);
+      entity.setPosition(targetX, targetY);
+      entity.setRotation(angle);
 
       if (targetY >= 0) {
         this._isDead = true;

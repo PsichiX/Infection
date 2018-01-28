@@ -11,6 +11,8 @@ import UfoController from "./UfoController";
 import IntroController from "./IntroController";
 import ParasiteController from "./ParasiteController";
 import OutroController from "./OutroController";
+import ContactSystem from './ContactSystem';
+import ContactBox from './ContactBox';
 
 lazyInitialization({
   render: { screen: 'screen-0' },
@@ -24,6 +26,8 @@ const {
   EntitySystem
 } = System.systems;
 
+System.register('ContactSystem', new ContactSystem());
+
 EntitySystem.registerComponent('SkyController', SkyController.factory);
 EntitySystem.registerComponent('ParallaxController', ParallaxController.factory);
 EntitySystem.registerComponent('GameController', GameController.factory);
@@ -35,6 +39,7 @@ EntitySystem.registerComponent('UfoController', UfoController.factory);
 EntitySystem.registerComponent('IntroController', IntroController.factory);
 EntitySystem.registerComponent('ParasiteController', ParasiteController.factory);
 EntitySystem.registerComponent('OutroController', OutroController.factory);
+EntitySystem.registerComponent('ContactBox', ContactBox.factory);
 
 vec4.set(RenderSystem.clearColor, 0, 0, 0, 0);
 
