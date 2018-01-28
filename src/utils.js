@@ -17,3 +17,7 @@ export function instantiatePrefab(path) {
 export function clamp(value, from, to) {
   return Math.max(from, Math.min(to, value))
 }
+
+export function randomRange(from, to) {
+  return from + (Math.random() * (to - from));
+}

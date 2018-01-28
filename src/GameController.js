@@ -1,4 +1,4 @@
-import { Script } from 'oxygen-core';
+import { System, Script } from 'oxygen-core';
 import { instantiatePrefab } from './utils';
 
 const REPETITIONS = 1;
@@ -35,6 +35,9 @@ export default class GameController extends Script {
     this.hydrantPrefabs = null;
     this._buildings = null;
     this._actors = null;
+    this._humans = new Set();
+    this._onRegisterHuman = this.onRegisterHuman.bind(this);
+    this._onUnregisterHuman = this.onUnregisterHuman.bind(this);
   }
 
   dispose() {
@@ -47,6 +50,9 @@ export default class GameController extends Script {
     this.hydrantPrefabs = null;
     this._buildings = null;
     this._actors = null;
+    this._humans = null;
+    this._onRegisterHuman = null;
+    this._onUnregisterHuman = null;
   }
 
   onAttach() {
@@ -64,6 +70,30 @@ export default class GameController extends Script {
     }
 
     this.populateBuildings();
+
+    System.events.on('register-human', this._onRegisterHuman);
+    System.events.on('unregister-human', this._onUnregisterHuman);
+  }
+
+  onDetach() {
+    System.events.off('register-human', this._onRegisterHuman);
+    System.events.off('unregister-human', this._onUnregisterHuman);
+  }
+
+  onRegisterHuman(human) {
+    if (!(human instanceof HumanController)) {
+      throw new Error('`human` is not type of HumanController!');
+    }
+
+    this._humans.add(human);
+  }
+
+  onUnregisterHuman(human) {
+    if (!(human instanceof HumanController)) {
+      throw new Error('`human` is not type of HumanController!');
+    }
+
+    this._humans.delete(human);
   }
 
   populateBuildings() {

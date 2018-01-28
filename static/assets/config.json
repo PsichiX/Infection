@@ -13,7 +13,8 @@
     "image://images/road-walk.png",
     "image://images/hydrant.png",
     "image://images/lamp.png",
-    "image://images/lamp-broken.png",
+    "image://images/lamp-broken-1.png",
+    "image://images/lamp-broken-2.png",
     "image://images/building-bottom-1.png",
     "image://images/building-bottom-2.png",
     "image://images/building-bottom-3.png",
@@ -49,6 +50,7 @@
     "scene://prefabs/condignation.json",
     "scene://prefabs/lamp.json",
     "scene://prefabs/hydrant.json",
+    "scene://prefabs/human.json",
     "scene://scenes/game.json"
   ]
 }

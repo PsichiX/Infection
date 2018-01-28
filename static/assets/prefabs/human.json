@@ -3,11 +3,16 @@
   "components": {
     "Sprite": {
       "shader": "shaders/sprite-transparent.json",
-      "overrideBaseTexture": "images/mockups/mockup-poke.json",
+      "overrideBaseTexture": "images/mockups/mockup-poke.png",
       "width": -1,
       "height": -1,
       "xOrigin": 0.5,
       "yOrigin": 1
+    },
+    "HumanController": {
+      "area": [-5000, 5000],
+      "speedWalk": 20,
+      "speedRun": 40
     }
   }
 }

@@ -254,7 +254,23 @@
           "name": "buildings"
         },
         {
-          "name": "actors"
+          "name": "actors",
+          "transform": {
+            "position": [0, 64]
+          },
+          "children": [
+            {
+              "name": "human",
+              "transform": {
+                "scale": 0.5
+              },
+              "components": {
+                "PrefabInstance": {
+                  "asset": "prefabs/human.json"
+                }
+              }
+            }
+          ]
         }
       ]
     },
