@@ -1,0 +1,85 @@
+{
+  "name": "root",
+  "components": {
+    "InputHandler": {},
+    "Camera2D": {
+      "zoomOut": 1024,
+      "zoomMode": "keep-aspect"
+    },
+    "OutroController": {}
+  },
+  "children": [
+    {
+      "name": "ufo",
+      "components": {
+        "Sprite": {
+          "shader": "shaders/sprite-transparent.json",
+          "overrideBaseTexture": "images/ufo.png",
+          "width": -1,
+          "height": -1,
+          "xOrigin": 0.5,
+          "yOrigin": 0.5
+        },
+        "UfoController": {
+          "speed": 2,
+          "range": 20
+        }
+      }
+    },
+    {
+      "name": "game-over",
+      "transform": {
+        "scale": 2,
+        "position": [
+          0,
+          -250
+        ]
+      },
+      "components": {
+        "Sprite": {
+          "shader": "shaders/sprite-transparent.json",
+          "overrideBaseTexture": "images/game-over.png",
+          "color": "#FFFFFF00",
+          "width": -1,
+          "height": -1,
+          "xOrigin": 0.5,
+          "yOrigin": 0.5
+        }
+      }
+    },
+    {
+      "name": "press-to-restart",
+      "transform": {
+        "scale": 2,
+        "position": [
+          0,
+          350
+        ]
+      },
+      "components": {
+        "Sprite": {
+          "shader": "shaders/sprite-transparent.json",
+          "overrideBaseTexture": "images/press-to-start.png",
+          "color": "#FFFFFF00",
+          "width": -1,
+          "height": -1,
+          "xOrigin": 0.5,
+          "yOrigin": 0.5
+        }
+      }
+    },
+    {
+      "name": "fadeout",
+      "components": {
+        "RectangleRenderer": {
+          "shader": "shaders/fullscreen-color-transparent.json",
+          "color": "#000000FF",
+          "width": 2,
+          "height": 2,
+          "xOrigin": 0.5,
+          "yOrigin": 0.5
+        }
+      }
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import CameraController from "./CameraController";
 import UfoController from "./UfoController";
 import IntroController from "./IntroController";
 import ParasiteController from "./ParasiteController";
+import OutroController from "./OutroController";
 
 lazyInitialization({
   render: { screen: 'screen-0' },
@@ -33,6 +34,7 @@ EntitySystem.registerComponent('CameraController', CameraController.factory);
 EntitySystem.registerComponent('UfoController', UfoController.factory);
 EntitySystem.registerComponent('IntroController', IntroController.factory);
 EntitySystem.registerComponent('ParasiteController', ParasiteController.factory);
+EntitySystem.registerComponent('OutroController', OutroController.factory);
 
 vec4.set(RenderSystem.clearColor, 0, 0, 0, 0);
 
@@ -45,5 +47,5 @@ AssetSystem.load('json://config.json')
   .then(configAsset => AssetSystem.loadAll(configAsset.data.assets))
   .then(() => System.events.triggerLater(
     'change-scene',
-    'scene://scenes/game.json'
+    'scene://scenes/failure-outro.json'
   ));

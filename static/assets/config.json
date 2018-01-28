@@ -44,6 +44,7 @@
     "image://images/ui-hp-foreground.png",
     "image://images/ui-icon-brainiac.png",
     "image://images/ui-icon-stronger.png",
+    "image://images/game-over.png",
     "font://fonts/verdana.fnt",
     "skeleton://skeletons/stronger.skeleton.json",
     "scene://skeletons/stronger.prefab.json",
@@ -66,7 +67,9 @@
     "scene://prefabs/human.json",
     "scene://prefabs/parasite.json",
     "scene://scenes/intro.json",
-    "scene://scenes/game.json"
+    "scene://scenes/game.json",
+    "scene://scenes/success-outro.json",
+    "scene://scenes/failure-outro.json"
   ],
   "input": {
     "axes": {
